@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Plant Nursery</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #e8f5e9;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1b5e20, #43a047);
+            color: white;
+            padding: 25px;
+        }
+
+        #title {
+            margin: 5px;
+            font-size: 38px;
+        }
+
+        #msg {
+            font-size: 18px;
+        }
+
+        nav {
+            background: #12372a;
+            padding: 14px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 18px;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            color: #ffd54f;
+        }
+
+        .deal-section {
+            padding: 20px;
+        }
+
+        /* PLANT OF THE DAY IMAGE */
+        #plant {
+            width: 240px;
+            height: 180px;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px #aaa;
+        }
+
+        #plant img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        button {
+            border: none;
+            padding: 11px 16px;
+            margin: 4px;
+            border-radius: 20px;
+            background: #2e7d32;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1b5e20;
+            transform: scale(1.05);
+        }
+
+        #products {
+            margin-top: 25px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .card {
+            width: 280px;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #bbb;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .card h3 {
+            color: #2e7d32;
+            font-size: 21px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #444;
+        }
+
+        #time {
+            color: #2e7d32;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 25px;
+        }
+
+        footer {
+            background: #12372a;
+            color: white;
+            padding: 12px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 700px) {
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            #title {
+                font-size: 30px;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1 id="title">Online Plant Nursery</h1>
+        <p id="msg">Bring nature home with beautiful plants!</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Plants</a>
+        <a href="https://nurserylive.com/"
+           target="_blank" rel="noopener">Shop Online</a>
+        <a href="mailto:greenleaf@gmail.com">Email</a>
+        <a href="tel:9876543210">Call</a>
+    </nav>
+
+    <!-- PLANT OF THE DAY -->
+    <section class="deal-section" id="home">
+
+        <h2>🌱 Plant of the Day</h2>
+
+        <!-- Jasmine flower image -->
+        <div id="plant">
+            <img
+                src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80"
+                alt="Jasmine and beautiful flowers">
+        </div>
+
+        <button onclick="changeStyle()">Change Style</button>
+        <button onclick="hidePlant()">Hide</button>
+        <button onclick="showPlant()">Show</button>
+        <button onclick="movePlant()">Move</button>
+        <button onclick="fadePlant()">Fade</button>
+        <button onclick="resetPlant()">Reset</button>
+
+    </section>
+
+    <!-- OUR PLANTS -->
+    <h2 id="products">🌿 Our Plants</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img
+                src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80"
+                alt="Money Plant">
+            <h3>Money Plant</h3>
+            <p>Easy to grow indoor plant.</p>
+            <p class="price">Money Plant - ₹199</p>
+        </div>
+
+        <div class="card">
+            <img
+                src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=600&q=80"
+                alt="Snake Plant">
+            <h3>Snake Plant</h3>
+            <p>Perfect plant for your home.</p>
+            <p class="price">Snake Plant - ₹249</p>
+        </div>
+
+        <div class="card">
+            <img
+                src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80"
+                alt="Lily Flower">
+            <h3>Lily</h3>
+            <p>Beautiful flowering garden plant.</p>
+            <p class="price">Lily - ₹299</p>
+        </div>
+
+        <div class="card">
+            <img
+                src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&fit=crop&w=600&q=80"
+                alt="Aloe Vera">
+            <h3>Aloe Vera</h3>
+            <p>Useful and easy-care indoor plant.</p>
+            <p class="price">Aloe Vera - ₹179</p>
+        </div>
+
+        <div class="card">
+            <img
+                src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=600&q=80"
+                alt="Jasmine Garden">
+            <h3>Jasmine Plant</h3>
+            <p>Fragrant flowering plant.</p>
+            <p class="price">Jasmine - ₹220</p>
+        </div>
+
+        <div class="card">
+            <img
+                src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=600&q=80"
+                alt="Rose Plant">
+            <h3>Rose</h3>
+            <p>Beautiful flowering plant for your garden.</p>
+            <p class="price">Rose - ₹350</p>
+        </div>
+
+    </div>
+
+    <!-- LIVE DATE AND TIME -->
+    <p id="time"></p>
+
+    <!-- FOOTER -->
+    <footer>
+        GreenLeaf Plant Nursery © 2026 |
+        Grow Green, Live Green 🌱
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        var moveTimer = null;
+        var fadeTimer = null;
+
+        // Stop any running animations
+        function stopAnimations() {
+            if (moveTimer !== null) {
+                clearInterval(moveTimer);
+                moveTimer = null;
+            }
+
+            if (fadeTimer !== null) {
+                clearInterval(fadeTimer);
+                fadeTimer = null;
+            }
+        }
+
+        // 1. CHANGE STYLE
+        function changeStyle() {
+            var title = document.getElementById("title");
+
+            title.style.color = "#ffd54f";
+            title.style.fontSize = "44px";
+        }
+
+        // 2. HIDE PLANT
+        function hidePlant() {
+            stopAnimations();
+            document.getElementById("plant").style.display = "none";
+        }
+
+        // 3. SHOW PLANT
+        function showPlant() {
+            document.getElementById("plant").style.display = "block";
+        }
+
+        // 4. MOVE PLANT IMAGE
+        function movePlant() {
+            stopAnimations();
+
+            var box = document.getElementById("plant");
+
+            box.style.display = "block";
+            box.style.left = "0px";
+
+            var position = 0;
+
+            moveTimer = setInterval(function() {
+                position += 2;
+                box.style.left = position + "px";
+
+                if (position >= 180) {
+                    clearInterval(moveTimer);
+                    moveTimer = null;
+                }
+            }, 10);
+        }
+
+        // 5. FADE PLANT IMAGE
+        function fadePlant() {
+            stopAnimations();
+
+            var box = document.getElementById("plant");
+
+            box.style.display = "block";
+
+            var opacity = 1;
+
+            fadeTimer = setInterval(function() {
+                opacity -= 0.05;
+                box.style.opacity = Math.max(opacity, 0);
+
+                if (opacity <= 0) {
+                    clearInterval(fadeTimer);
+                    fadeTimer = null;
+                }
+            }, 50);
+        }
+
+        // 6. RESET PLANT IMAGE AND TITLE
+        function resetPlant() {
+            stopAnimations();
+
+            var box = document.getElementById("plant");
+
+            box.style.display = "block";
+            box.style.left = "0px";
+            box.style.opacity = "1";
+
+            var title = document.getElementById("title");
+
+            title.style.color = "white";
+            title.style.fontSize = "38px";
+        }
+
+        // 7. DISPLAY DATE AND TIME
+        function showTime() {
+            var current = new Date();
+
+            document.getElementById("time").innerHTML =
+                "📅 " + current.toLocaleDateString() +
+                " &nbsp; | &nbsp; ⏰ " +
+                current.toLocaleTimeString();
+        }
+
+        showTime();
+
+        // Update time every second
+        setInterval(showTime, 1000);
+
+        // 8. CHANGE WELCOME MESSAGE AFTER TWO SECONDS
+        setTimeout(function() {
+            document.getElementById("msg").innerHTML =
+                "🌱 Welcome to GreenLeaf – Grow Green, Live Green!";
+        }, 2000);
+    </script>
+
+</body>
+</html>
+```
